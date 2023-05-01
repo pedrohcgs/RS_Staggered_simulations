@@ -1,0 +1,24 @@
+{
+  "name": "myLargePool",
+  "vmSize": "Standard_D13_v2",
+  "maxTasksPerNode": 8,
+  "poolSize": {
+    "dedicatedNodes": {
+      "min": 0,
+      "max": 25
+    },
+    "lowPriorityNodes": {
+      "min": 10,
+      "max": 62
+    },
+    "autoscaleFormula": "QUEUE"
+  },
+  "containerImage": "rocker/tidyverse:latest",
+  "rPackages": {
+    "cran": ["doParallel", "Rcpp", "dplyr", "reshape2", "purrr"],
+    "github": ["jonathandroth/staggered@add_frt", "bcallaway11/did"],
+    "bioconductor": []
+  },
+  "commandLine": [],
+  "subnetId": ""
+}
